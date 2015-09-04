@@ -1,0 +1,45 @@
+.music-list {
+  background-color: grey;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.music-item {
+  background-color: greenyellow;
+  padding: 20px;
+  margin: 20px;
+
+  flex: 1;
+  max-width: 400px;
+  min-width: 200px;
+  &.my-album-class {
+    background-color: blue;
+  }
+  &.my-track-class {
+    background-color: red;
+  }
+  &.my-artist-class {
+    background-color: burlywood;
+  }
+  &.my-playlist-class {
+    background-color: cyan;
+  }
+}
+
+.square-image {
+  background-size: cover;
+  height: 200px;
+  width: 200px;
+}
+
+.rounded-image {
+  background-size: cover;
+  background-position: 50%;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+body {
+  background-color: lighten(grey, 30%);
+}

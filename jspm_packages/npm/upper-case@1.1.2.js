@@ -1,0 +1,1 @@
+module.exports = require("npm:upper-case@1.1.2/upper-case");
