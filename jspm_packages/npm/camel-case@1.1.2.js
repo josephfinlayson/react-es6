@@ -1,1 +1,0 @@
-module.exports = require("npm:camel-case@1.1.2/camel-case");

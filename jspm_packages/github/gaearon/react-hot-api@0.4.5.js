@@ -1,1 +1,0 @@
-module.exports = require("github:gaearon/react-hot-api@0.4.5/modules/index");

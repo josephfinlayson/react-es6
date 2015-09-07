@@ -1,1 +1,0 @@
-module.exports = require("github:theefer/plugin-sass@master/sass");
