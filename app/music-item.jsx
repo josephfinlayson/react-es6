@@ -1,7 +1,15 @@
 import React, {Component} from 'react';
 import _ from 'lodash';
+import mixin from 'mixin-decorator';
+import modalMixin from './modal-mixin.jsx!';
 
+@mixin(modalMixin)
 class MusicItem extends Component {
+
+    constructor (props, context) {
+        super(props, context)
+        this.state = {}
+    }
 
     getWrapperClass () {
         let wrapperClass;
@@ -23,33 +31,45 @@ class MusicItem extends Component {
         return wrapperClass;
     }
 
-
     renderImage () {
         switch (this.props.model.type) {
             case 'album' :
                 if (this.props.model.images[0]) {
-                    return  <img className="square-image" src={this.props.model.images[0].url}/>
+                    return <img className="square-image" src={this.props.model.images[0].url}/>
                 }
                 break;
             case 'artist':
                 if (this.props.model.images[0]) {
-                    return <div className="rounded-image" style={{backgroundImage: "url('" +this.props.model.images[0].url + "')"}} />
+                    return <div className="rounded-image"
+                                style={{backgroundImage: "url('" +this.props.model.images[0].url + "')"}}/>
                 }
 
                 break;
             case 'playlist':
-                if (this.props.model.images[0]){
-                    return <div className="rounded-image" style={{backgroundImage: "url('" +this.props.model.images[0].url + "')"}} />
+                if (this.props.model.images[0]) {
+                    return <div className="rounded-image"
+                                style={{backgroundImage: "url('" +this.props.model.images[0].url + "')"}}/>
                 }
                 break;
             case 'track':
-                return <img className="square-image" src={'https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg'}/>
+                return <img className="square-image"
+                            src={'https://pbs.twimg.com/profile_images/378800000822867536/3f5a00acf72df93528b6bb7cd0a4fd0c.jpeg'}/>
                 break;
         }
     }
 
-    openModal () {
+    openModal = () => {
+        this.setState({openModal: !this.state.openModal})
+    }
 
+    renderModal () {
+
+        return !this.state.openModal ? null : (
+            <div className='modal'> {this.renderImage()}
+                <div className='json'>
+                    {JSON.stringify(this.props.model)}
+                </div>
+            </div> )
     }
 
     render () {
@@ -57,11 +77,28 @@ class MusicItem extends Component {
                      onClick={this.openModal}>
             {this.renderImage()}
             {this.props.model.name}
+            {this.renderModal()}
+
         </div>)
     }
-
-
 }
+export let __hotReload = true;
 
 export default MusicItem;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

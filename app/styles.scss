@@ -43,3 +43,19 @@
 body {
   background-color: lighten(grey, 30%);
 }
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(200, 200, 200, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .json {
+    width: 400px;
+    word-wrap: break-word
+  }
+}

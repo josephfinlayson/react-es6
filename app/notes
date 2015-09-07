@@ -1,0 +1,14 @@
+ES6 Classes
+   pros:
+    idiomatic JS
+    just plain objects (can be modified with object assign/extend)
+    Extensible, composable
+
+   cons:
+    no mixins
+    no autobinding
+
+Show syntatic binding
+Show mixin with decorators
+Show object extension, using eval()
+Show prototype override (searchHandler, )

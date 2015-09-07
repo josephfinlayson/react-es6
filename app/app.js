@@ -15,7 +15,7 @@ class Handler extends Component {
 
     componentDidMount () {
         Rx.DOM.ajax({
-            url: 'https://api.spotify.com/v1/search?q=music&type=artist,album,track,playlist&limit=2',
+            url: 'https://api.spotify.com/v1/search?q=music&type=artist,album,track,playlist&limit=20',
             crossDomain: true,
             responseType: 'json'
         }).map(data => _.shuffle(

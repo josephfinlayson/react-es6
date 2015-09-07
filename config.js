@@ -3,8 +3,8 @@ System.config({
   defaultJSExtensions: true,
   transpiler: "babel",
   babelOptions: {
-    stage:0,
-          blacklist: [],
+    "stage": 0,
+    "blacklist": [],
     "optional": [
       "runtime",
       "optimisation.modules.system"
@@ -22,6 +22,7 @@ System.config({
     "css": "github:systemjs/plugin-css@0.1.15",
     "jsx": "npm:jspm-loader-jsx@0.0.7",
     "lodash": "npm:lodash@3.10.1",
+    "mixin-decorator": "npm:mixin-decorator@1.0.5",
     "react": "npm:react@0.13.3",
     "rx": "npm:rx@3.1.1",
     "rx-dom": "npm:rx-dom@6.0.0",
